@@ -37,6 +37,11 @@ class LifeCycleMethods extends React.Component {
     console.log("Mounted");
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    console.log("updated");
+    console.log(prevState.count);
+  }
+
   render() {
     console.log("rendered");
     return (
