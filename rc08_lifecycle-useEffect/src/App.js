@@ -7,9 +7,10 @@ function App() {
   return (
     <div className="container text-center mt-4">
       <button className="btn btn-dark" onClick={() => setShow(!show)}>
-        {show ? "hide" : "show"}
+        {show ? "hide" : "show"}
       </button>
       {show && <LifeCycleMethods />}
+      <Timer />
     </div>
   );
 }
