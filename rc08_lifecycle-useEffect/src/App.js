@@ -1,5 +1,7 @@
 import LifeCycleMethods from "./components/LifeCycleMethods";
 import { useState } from "react";
+import Timer from "./components/Timer";
+import UseEffect from "react";
 
 function App() {
   const [show, setShow] = useState(true);
@@ -11,6 +13,7 @@ function App() {
       </button>
       {show && <LifeCycleMethods />}
       <Timer />
+      <UseEffect />
     </div>
   );
 }
