@@ -1,20 +1,32 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const User = () => {
   const [user, setUser] = useState("");
 
-  fetch("https://randomuser.me/api/")
-    .then((res) => res.json())
-    .then((data) => console.log(data));
+  const getUser = () => {
+    fetch("https://randomuser.me/api")
+      .then((res) => res.json())
+      .then((data) => setUser(data.results[0]));
+  };
+
+  useEffect(() => {
+    getUser();
+  }, []);
+  console.log(user);
+  const { name, dob, email, picture } = user;
 
   return (
     <div>
-      <h1>Name</h1>
+      <h1>
+        {name.first} {name.last}
+      </h1>
       <img src="#" alt="" />
       <p>Email</p>
       <h5>DOB</h5>
-      <button className="btn btn-danger">Get User</button>
+      <button className="btn btn-danger" onClick={getUser}>
+        Get User
+      </button>
     </div>
   );
 };
