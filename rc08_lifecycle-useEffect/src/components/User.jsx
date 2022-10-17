@@ -19,11 +19,13 @@ const User = () => {
   return (
     <div>
       <h1>
-        {name.first} {name.last}
+        {/** optional Chaning oluyor burada ? kullanılır name varsa first üne eriş deniyor */}
+        {name?.first?.x} {name?.last}
       </h1>
-      <img src="#" alt="" />
-      <p>Email</p>
-      <h5>DOB</h5>
+      <img className="rounded-circle " src={picture?.large} alt="img" />
+      <p>{email}</p>
+      <h5>{new Date(dob?.date).toLocaleDateString()}</h5>
+      <h5>{dob?.age}</h5>
       <button className="btn btn-danger" onClick={getUser}>
         Get User
       </button>
