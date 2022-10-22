@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import { useParams, useLocation } from "react-router-dom";
 
 const PersonDetail = () => {
-  return (
-    <div>PersonDetail</div>
-  )
-}
+  const { id } = useParams();
+  console.log(id);
+  const { state: person } = useLocation();
+  console.log(person);
 
-export default PersonDetail
+  return <div>PersonDetail</div>;
+};
+
+export default PersonDetail;
