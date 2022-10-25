@@ -1,7 +1,21 @@
+import Header from "./components/Header";
+import { ThemeProvider } from "styled-components";
+const theme = {
+  colors: {
+    header: "#333",
+    body: "#fff",
+    footer: "#8a1c4a",
+  },
+  margins: {},
+  responsive: {},
+};
+
 const App = () => {
   return (
     <>
-      <h1>APP</h1>
+      <ThemeProvider theme={theme}>
+        <Header />
+      </ThemeProvider>
     </>
   );
 };
